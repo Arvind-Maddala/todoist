@@ -1,0 +1,39 @@
+
+
+.todo__form{
+  background-color: #fff;
+  max-width: 300px;
+  padding: 1rem 2rem;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+.todo__form input{
+  background-color: transparent;
+  border: none;
+  min-width: 200px;
+  min-height: 32px;
+}
+
+input:focus, input:active {
+  outline: none;
+}
+
+.todo__btn {
+  background:transparent;
+  border: none;
+  cursor:pointer;
+}
+::placeholder {
+  font-size: 1.25rem;
+}
+
+.queue__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.queue__title h1 {
+  margin-left: 1rem;
+}

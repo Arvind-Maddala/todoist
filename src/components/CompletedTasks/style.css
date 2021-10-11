@@ -1,0 +1,28 @@
+.completedTask {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 300px;
+}
+
+.completedTask h2, .trash__task{
+  font-family: 'Reenie Beanie', cursive;
+  font-size:2rem;
+  margin-top: 1rem;
+}
+ .errorMessage {
+   margin-top: 25%;
+ }
+
+ .completedTask button{
+   background: transparent;
+   border: none;
+   margin-left: 1rem;
+   cursor:pointer;
+ }
+
+ .completedTask__Btns {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
