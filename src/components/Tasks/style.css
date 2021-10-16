@@ -12,7 +12,7 @@
 .todo__form input{
   background-color: transparent;
   border: none;
-  min-width: 200px;
+  /* min-width: 100%; */
   min-height: 32px;
 }
 
@@ -36,4 +36,41 @@ input:focus, input:active {
 }
 .queue__title h1 {
   margin-left: 1rem;
+}
+
+
+
+@media (max-width:1000px) {
+ 
+
+  .todo__form{
+    background-color: #fff;
+    width: 100%;
+    padding: 1rem 2rem;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  .queue__title h1 {
+    font-size: 1.5rem;
+  }
+  .todo__form {
+    max-width: 100%;
+  }
+  .todo__form{
+    max-width: inherit;
+  
+  }
+  .toDo {
+    width: 80%;
+  }
+  .todo__form input{
+    width: 100%;
+    min-height: 28px;
+  }
+  ::placeholder {
+    font-size: 1rem;
+  }
+
 }

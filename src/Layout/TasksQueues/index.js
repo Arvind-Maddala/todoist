@@ -1,17 +1,38 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './style.css';
 import { v4 as uuid } from 'uuid';
 import {Trash , CompletedTasks, Tasks} from '../../components';
 
 const TaskQueues = () => {
+//Fetching from Local Storage
+
+const getTasksFromLocalStorage = () => {
+  let data = JSON.parse(localStorage.getItem('tasks'));
+  if (!data) return [];
+  return data;
+}
+
+const getCompletedTasksFromLocalStorage = () => {
+  let data = JSON.parse(localStorage.getItem('completedTasks'));
+  if (!data) return [];
+  return data;
+}
+const getDeletedTasksFromLocalStorage = () => {
+  let data = JSON.parse(localStorage.getItem('trashTasks'));
+  if (!data) return [];
+  return data;
+}
+
+
   //State Variables 
   const [task, setTask] = useState('');
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(getTasksFromLocalStorage());
   const [editTask, setEditTask] = useState(null);
-  const [trashTasks, setTrashTasks] = useState([])
-  const [completedTasks, setCompletedTasks] = useState([])
+  const [trashTasks, setTrashTasks] = useState(getDeletedTasksFromLocalStorage())
+  const [completedTasks, setCompletedTasks] = useState(getCompletedTasksFromLocalStorage())
   
   // To handle Input Value Change
+
 
   const handleTask = (e) => {
     e.preventDefault();
@@ -101,6 +122,12 @@ const TaskQueues = () => {
   setCompletedTasks(newCompletedTasks);
   setTasks([...tasks, restoreItem])
 }
+useEffect(() => {
+ localStorage.setItem('tasks', JSON.stringify(tasks));
+ localStorage.setItem('completedTasks', JSON.stringify(completedTasks));
+ localStorage.setItem('trashTasks', JSON.stringify(trashTasks));
+}, [tasks, completedTasks, trashTasks])
+
   return (
     <div className="taskQueues">
       <div className="ToDoQueue">

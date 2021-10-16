@@ -13,3 +13,10 @@
   margin-left: 0.5rem;
   cursor: pointer;
 }
+
+@media (max-width: 1000px) {
+  .task {
+    min-width:100%;
+    font-size:1rem;
+  }
+}
