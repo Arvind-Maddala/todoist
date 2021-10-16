@@ -20,3 +20,13 @@
     font-size:1rem;
   }
 }
+
+
+@media (max-width:360px) {
+
+  .task {
+    font-size:1rem;
+  }
+  
+  
+}
